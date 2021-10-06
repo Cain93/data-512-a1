@@ -19,6 +19,11 @@ Five different API requests are made, requesting desktop and mobile usage from t
 #### 2. Data Processing
 The data from the api requests in stage is collected and combined, merging on Year and Month. The data is then pivoted to be intabular format, with one column for each API data type. Finally, the "mobile-site" and "mobile-app" counts from the pageview api are combined into just "mobile", and the total number of views, desktop + mobile, is calculated for the pageview api and legacy api. The resulting data is saved in the 'en-wikipedia_traffic_200712-202108.csv' file
 
+#### 3. Analysis
+Analysis involved graphing the values created in the processing step. Using the csv file created in Stage 2, the values are graphed on a line chart using pandas and matplotlib. Year and month are combined into dates for the x-axis, and other values are converted into billions to display on the y-axis. API (Pageview or Legacy) are encoded as blue and green lines respectively, while the different sites accessed (All, Desktop, Mobile) are encoded with line style. The result is saved as "english_wikipedia_traffic.png".
+
+For clarity,
+
 ## Data
 
 ### Permissions
