@@ -22,8 +22,6 @@ The data from the api requests in stage is collected and combined, merging on Ye
 #### 3. Analysis
 Analysis involved graphing the values created in the processing step. Using the csv file created in Stage 2, the values are graphed on a line chart using pandas and matplotlib. Year and month are combined into dates for the x-axis, and other values are converted into billions to display on the y-axis. API (Pageview or Legacy) are encoded as blue and green lines respectively, while the different sites accessed (All, Desktop, Mobile) are encoded with line style. The result is saved as "english_wikipedia_traffic.png".
 
-For clarity,
-
 ## Data
 
 ### Permissions
