@@ -16,6 +16,8 @@ All code used is contained in the hcds-a1-data-curation.ipynb notebook. Running 
 #### 1. Data Acquisition
 Five different API requests are made, requesting desktop and mobile usage from the legacy endpoint, and desktop, mobile-site and mobile-app usage from the pageviews endpoint. All responses are saved as json files in the data folder.
 
+#### 2. Data Processing
+The data from the api requests in stage is collected and combined, merging on Year and Month. The data is then pivoted to be intabular format, with one column for each API data type. Finally, the "mobile-site" and "mobile-app" counts from the pageview api are combined into just "mobile", and the total number of views, desktop + mobile, is calculated for the pageview api and legacy api. The resulting data is saved in the 'en-wikipedia_traffic_200712-202108.csv' file
 
 ## Data
 
@@ -35,7 +37,18 @@ This API makes available the pagecounts from January 2008 to July 2016. Data is 
 ### Description
 
 * #### Raw Data
-All files in the data folder contain the exact responses of the API requests in JSON format. Files are named "<apiname>_<accesstype>_<firstmonth>-<lastmonth>.json" 
+All files in the data folder contain the exact responses of the API requests in JSON format. Files are named "apiname_accesstype_firstmonth-lastmonth.json" 
 
 * #### Processed Data
+The processed data contains 164 rows and 6 columns, and is stored in the csv file en-wikipedia_traffic_200712-202108.csv
+ 1.  **year**: The year in YYYY format
+ 1. **month**: The month in MM format
+ 1. **pageview_desktop_views**: The number of page views for that month accessed from a desktop computer, from the pageview API, excluding crawlers and beginning in July 2015
+ 1. **pagecount_desktop_views**: The number of page views for that month accessed from a desktop computer, from the legacy API, including crawlers and spanning from January 2008 to July 2016
+ 1. **pagecount_mobile_views**: The number of page views for that month accessed from a mobile phone, from the legacy API, including crawlers and spanning from January 2008 to July 2016
+ 1. **pageview_mobile_views**: The number of page views for that month accessed from a mobile phone or app, from the pageview API, excluding crawlers and beginning in July 2015
+ 1. **pagecount_all_views**: The number of page views for that month accessed in any form, from the legacy API, including crawlers and spanning from January 2008 to July 2016
+ 1. **pageview_all_views**: The number of page views for that month accessed fin any form, from the pageview API, excluding crawlers and beginning in July 2015
+
+
 
