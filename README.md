@@ -53,5 +53,25 @@ The processed data contains 164 rows and 6 columns, and is stored in the csv fil
  1. **pagecount_all_views**: The number of page views for that month accessed in any form, from the legacy API, including crawlers and spanning from January 2008 to July 2016
  1. **pageview_all_views**: The number of page views for that month accessed fin any form, from the pageview API, excluding crawlers and beginning in July 2015
 
+## Result
+
+### Visualization
+
+![wikipedia traffic image](english_wikipedia_traffic.png)
+
+### Analysis
+
+A few trends are apparent from this visualization:
+1. The growth of total page views until around 2017, then a relative plateau.
+1. The rise of mobile page views from the beginning of data in 2015.
+1. The impact of excluding web crawlers on the totals, visible as the gap between the solid blue and solid green line in 2016.
+
+### Considerations
+
+Due to the change in measurement between the old and new APIs, direct comparison for data before and after 2015 is not available. All Legacy API data includes bot and web crawlers, so will always present a higher number than the newer measurements would. Thus the blue and green line can be compared where they overlap to see the impact of automated page visits, but should not be directly used to form a trend.
+
+All data is self-reported from the Wikimedia Foundation, and has not been tested by this author for accuracy or reliability.
+
+
 
 
